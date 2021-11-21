@@ -10,7 +10,11 @@ body {
   background: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
   background-attachment: fixed;
 }
-
+.restart {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 /* ----- home page ----- */
 main.home {
   width: 100%;
@@ -54,4 +58,102 @@ main.home .info:active {
   transform: scale(0.9);
 }
 
-/* ----- game screen ----- */
+/* ----- gameplay ----- */
+
+.gameplay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gameplay .turn {
+  margin: 50px auto;
+  max-width: 100%;
+  width: 1000px;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 5px 5px 0px #0000005c;
+}
+.gameplay .box {
+  margin: 0 auto 3% auto;
+  max-width: 100%;
+  width: 1000px;
+  display: flex;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: 5px 5px 0px #0000005c;
+}
+.gameplay .box h1 {
+  font-weight: 500;
+}
+
+.userCoins {
+  display: flex;
+}
+.userCoins .coin {
+  padding: 10px;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+.userCoins > .coin {
+  content: "O";
+  filter: grayscale(1);
+  cursor: pointer;
+  font-size: 3em;
+}
+
+.userCoins:hover > .coin {
+  filter: grayscale(0);
+}
+.userCoins > .coin:hover ~ .coin {
+  filter: grayscale(1);
+}
+.userCoins .beat {
+  padding: 10px;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+.userCoins > .beat {
+  content: "O";
+  filter: grayscale(1);
+  cursor: pointer;
+  font-size: 3em;
+}
+
+.userCoins:hover > .beat {
+  filter: grayscale(0);
+}
+.userCoins > .beat:hover ~ .beat {
+  filter: grayscale(1);
+}
+.activecoin {
+  filter: grayscale(0) !important;
+}
+.next {
+  background-color: white;
+  outline: none;
+  border: none;
+  max-width: 100%;
+  width: 1000px;
+  font-size: 26px;
+  height: 56px;
+  cursor: pointer;
+  box-shadow: 5px 5px 0 #0000005c;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: 500;
+}
+.next:active {
+  transform: translate(5px, 5px);
+  box-shadow: 0 0 0 #0000005c;
+}
